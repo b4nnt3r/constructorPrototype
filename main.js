@@ -13,12 +13,12 @@ function Dog (status, color, hungry, owner) {
   this.hungry = hungry;
   this.owner = owner;
 }
-
-let sadie = new Dog ('normal', 'black', false, 'mason');
-let moonshine = new Dog ('normal', 'brown', true);
-let atticus = new Dog()
 // Instances of Dog
 // Needed: sadie, moonshine, atticus
+
+let sadie = new Dog('normal', 'black', false);
+let moonshine = new Dog('normal', 'brown', true);
+let atticus = new Dog('normal', 'brindle');
 
 //     __
 //    / /_  __  ______ ___  ____ _____  _____
@@ -29,15 +29,18 @@ let atticus = new Dog()
 // Human Constructor & Prototype
 function Human (cool) {
   this.cool = cool;
-  this.pet = function () {
-    sadie.status = "happy";
-  }
-  this.feed = function(){
-    moonshine.hungry = false;
-  }
 }
-let mason = new Human(false);
-let julia = new Human(true);
+
+mason = new Human(false);
+julia = new Human(true);
 
 // Instances of Human
 // Needed: mason, julia
+
+Human.prototype.pet = function(dog){
+  return dog.status = 'happy';
+}
+
+Human.prototype.feed = function(dog){
+  return dog.hungry = false;
+}
