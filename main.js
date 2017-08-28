@@ -31,11 +31,11 @@ function Human (cool) {
   this.cool = cool;
 }
 
-mason = new Human(false);
-julia = new Human(true);
-
 // Instances of Human
 // Needed: mason, julia
+
+mason = new Human(false);
+julia = new Human(true);
 
 Human.prototype.pet = function(dog){
   return dog.status = 'happy';
